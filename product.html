@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pepsi Product Gallery</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+    }
+
+    .product-card {
+      width: 300px;
+      background: #fff;
+      margin: 100px auto;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      overflow: hidden;
+      cursor: pointer;
+      text-align: center;
+      transition: transform 0.2s ease;
+    }
+
+    .product-card:hover {
+      transform: scale(1.02);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: auto;
+    }
+
+    .product-card h2 {
+      padding: 16px;
+      font-size: 20px;
+    }
+
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.8);
+    }
+
+    .modal-content {
+      background-color: #fff;
+      margin: 5% auto;
+      padding: 20px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 800px;
+      position: relative;
+    }
+
+    .modal-content h3 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .image-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+    }
+
+    .image-gallery img {
+      width: 150px;
+      height: auto;
+      border-radius: 8px;
+      transition: transform 0.2s;
+    }
+
+    .image-gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 24px;
+      font-weight: bold;
+      color: #333;
+      cursor: pointer;
+    }
+
+    @media (max-width: 500px) {
+      .image-gallery img {
+        width: 100px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Product Card -->
+  <div class="product-card" id="productCard">
+    <img src="multi.jfif" alt="Pepsi Can">
+    <h2>Pepsi 330ml Can</h2>
+  </div>
+
+  <!-- Modal with Gallery -->
+  <div id="imageModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" id="closeModal">&times;</span>
+      <h3>Pepsi Product Gallery</h3>
+      <div class="image-gallery">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Pepsi_can_2023.svg/1200px-Pepsi_can_2023.svg.png" alt="Pepsi Front">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Pepsi_Zero_Sugar_logo_2023.svg/512px-Pepsi_Zero_Sugar_logo_2023.svg.png" alt="Pepsi Logo">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Pepsi_2L_Bottle.jpg/640px-Pepsi_2L_Bottle.jpg" alt="Pepsi 2L">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Pepsi_logo_2023.svg/800px-Pepsi_logo_2023.svg.png" alt="Pepsi Logo 2023">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Pepsi_500ml_Bottle.jpg/600px-Pepsi_500ml_Bottle.jpg" alt="Pepsi 500ml">
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const productCard = document.getElementById('productCard');
+    const modal = document.getElementById('imageModal');
+    const closeModal = document.getElementById('closeModal');
+
+    productCard.addEventListener('click', () => {
+      modal.style.display = 'block';
+    });
+
+    closeModal.addEventListener('click', () => {
+      modal.style.display = 'none';
+    });
+
+    window.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.style.display = 'none';
+      }
+    });
+  </script>
+
+</body>
+</html>
