@@ -1,0 +1,470 @@
+<!-- Header Section Code -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Aryan Kirana Store</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    header {
+      background: linear-gradient(to right, #2c3e50, #3498db);
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+      animation: fadeInSlide 1s ease-out forwards;
+      opacity: 0;
+    }
+
+    header h1 {
+      font-size: 40px;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+    }
+
+    header p {
+      font-size: 20px;
+      color: #e0e0e0;
+    }
+
+    nav {
+      background: #fff;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    nav a {
+      color: #2c3e50;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #3498db;
+    }
+
+    @keyframes fadeInSlide {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 28px;
+      }
+      header p {
+        font-size: 16px;
+      }
+      nav {
+        flex-direction: column;
+        align-items: center;
+      }
+      nav a {
+        padding: 8px 0;
+      }
+    }
+
+    .products-section {
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 30px 20px;
+    text-align: center;
+    background: #fff;
+    border-radius: 8px;
+
+    animation: fadeUp 1s ease-out;
+  }
+
+  .products-section h2 {
+    font-size: 32px;
+    color: #2c3e50;
+    margin-bottom: 10px;
+  }
+
+  .section-desc {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 30px;
+  }
+
+  .product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+  }
+
+  .product-card {
+    background: #f9f9f9;
+    padding: 20px;
+    width: 220px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+  }
+
+  .product-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .product-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 10px;
+  }
+
+  .product-card h3 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 8px;
+  }
+
+  .product-card p {
+    font-size: 14px;
+    color: #666;
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .product-card {
+      width: 100%;
+    }
+  }
+
+    .shop-image {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 10px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+      opacity: 0;
+      transform: scale(0.95);
+      animation: fadeZoom 1.5s ease-out forwards;
+    }
+ 
+   @keyframes fadeZoom {
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    
+    .about-section {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 40px;
+      padding: 60px 20px;
+      background-color: #fff;
+      max-width: 1200px;
+      margin: 60px auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+       }
+
+    .about-text {
+      flex: 1 1 450px;
+      animation: slideInLeft 1.2s ease-out forwards;
+      opacity: 0;
+    }
+
+    .about-text h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+      color: #2c3e50;
+       }
+
+    .about-text p {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #555;
+      margin-bottom: 15px;
+    }
+
+    .about-image {
+      flex: 1 1 400px;
+      text-align: center;
+      animation: bounceInRight 1.4s ease-out forwards;
+      opacity: 0;
+    }
+
+    .about-image img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+ @keyframes slideInLeft {
+      from {
+        transform: translateX(-60px);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+  @keyframes bounceInRight {
+      0% {
+        opacity: 0;
+        transform: translateX(100px);
+      }
+      60% {
+        transform: translateX(-20px);
+      }
+      80% {
+        transform: translateX(10px);
+        }
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .about-section {
+        flex-direction: column;
+        text-align: center;
+      }
+ .about-text, .about-image {
+        animation: none;
+        opacity: 1;
+      }
+    }
+h1 {
+    color: #004aad;
+  }
+  .image-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    max-width: 700px;
+    margin: 20px auto;
+  }
+  .image-grid img {
+    width: 100%;
+    height: auto;
+ border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+  }
+  .image-grid img:hover {
+    transform: scale(1.05);
+  }
+  .info {
+    max-width: 700px;
+    margin: 30px auto;
+    font-size: 1.1em;
+    line-height: 1.5;
+    color: #333;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 40px 0;
+  font-family: Arial, sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-section {
+  flex: 1;
+  padding: 10px 20px;
+  min-width: 250px;
+}
+
+.footer-section h3 {
+  border-bottom: 2px solid #fff;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.footer-section ul li a:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 20px;
+  background-color: #222;
+  font-size: 14px;
+}
+
+
+</style>
+
+
+
+</style> 
+</head>
+<body>
+
+  <header>
+    <h1>ARYAN KIRANA STORE</h1>
+    <p>Your Trusted Local Grocery & Beverage Partner</p>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="home.html">Products</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+<section class="products-section">
+
+ <img src="images.png" alt="Aryan Kirana Store" class="shop-image">
+
+<div class="about-text">
+      <h2>Welcome to Aryan Kirana Store</h2>
+      <p>
+        Aryan Kirana Store is your go-to destination for everyday essentials — from refreshing cold drinks to cooking oils, water bottles, packaged snacks, and more.
+      </p>
+      <p>
+        We focus on quality products, excellent service, and affordable pricing. Visit our shop today and experience neighborhood shopping like never before!
+      </p>
+      <p><strong>📍 Location:</strong> Near Main Road, Your City</p>
+      <p><strong>🕒 Open:</strong> 7:00 AM – 10:00 PM</p>
+    </div>
+<div class="about-image">
+      <!-- 🔽 Replace 'shop.jpg' with your actual file name -->
+      <img src="pepsi.jfif" alt="Aryan Kirana Store Photo">
+    </div>
+
+  <h2>Our Products</h2>
+  <p class="section-desc">We offer a wide variety of quality items for your daily needs. Freshness and quality guaranteed!</p>
+
+  <div class="product-grid">
+    <div class="product-card">
+      <img src="Sprite-Soft-Drink-Can-300ml.avif" alt="Soft Drinks">
+      <h3>Soft Drinks</h3>
+      <p>Pepsi, Coca-Cola, Sprite, Fanta, Mountain Dew and more.</p>
+    </div>
+
+    <div class="product-card">
+      <img src="bisleri.jfif" alt="Mineral Water">
+      <h3>Mineral Water</h3>
+      <p>Bisleri, Kinley and other trusted water brands available.</p>
+    </div>
+
+    <div class="product-card">
+      <img src="images.jfif" alt="pepsi">
+      <h3>pepsi</h3>
+      <p>Daily-use oils for home cooking in all popular brands.</p>
+    </div>
+
+    <div class="product-card">
+      <img src="Fruit-juice-sh1489857866.jpg.webp" alt="Juices">
+      <h3>Juices</h3>
+      <p>Real, Frooti, Tropicana and other tasty drink options.</p>
+    </div>
+  </div>
+<h1>Pepsi - Brand Images</h1>
+
+<div class="image-grid">
+  <img src="fanta.png" alt="Pepsi Can" />
+  <img src="istockphoto-487787092-612x612.jpg" alt="Pepsi Logo" />
+  <img src="coke.webp" alt="Pepsi Bottle" />
+  <img src="dew.jpg" alt="Pepsi Cans Stacked" />
+</div>
+
+<div class="info">
+  <p>
+    Pepsi ek carbonated soft drink hai jo PepsiCo dwara banayi jaati hai.
+    Iski shuruaat 1893 mein 'Brad's Drink' ke naam se hui thi, jo 1898 mein 'Pepsi-Cola' bana.
+      Aaj Pepsi duniya ke sabse bade beverage brands mein se ek hai.
+    Ye Coca-Cola ka sabse bada competitor hai aur sports, music, aur youth culture mein deeply involved hai.
+  </p>
+</div>
+  
+
+</section>
+
+
+<footer>
+  <div class="footer-container">
+    <div class="footer-section about">
+      <h3>About Us</h3>
+      <p>We offer quality products at affordable prices. Customer satisfaction is our top priority.</p>
+    </div>
+
+    <div class="footer-section links">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="/shop">Shop</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="/faq">FAQ</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section contact">
+      <h3>Contact Us</h3>
+      <p>Email: support@yourshop.com</p>
+      <p>Phone: +91-12345-67890</p>
+      <p>Address: 123 Market Road, Delhi</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2025 YourShop | All rights reserved.
+  </div>
+ 
+
+
+</footer>
+
+</body>
+</html>
